@@ -7,12 +7,11 @@ import org.springframework.validation.Validator;
 
 public class LoginValidator implements Validator {
 
-	@Override
 	public boolean supports(Class<?> clazz) {
 		return LoginSessionModel.class.isAssignableFrom(clazz);
 	}
 
-	@Override
+	
 	public void validate(Object target, Errors errors) {
 		LoginSessionModel loginModel = (LoginSessionModel) target;
 		

@@ -9,12 +9,11 @@ import org.springframework.stereotype.Component;
 
 public class LoginDaoImpl extends SqlMapClientDaoSupport implements LoginDao {
 
-	@Override
 	public LoginSessionModel selectUserId(String userId) {
 		return (LoginSessionModel) getSqlMapClientTemplate().queryForObject("login.loginCheck1", userId);
 
 	}	
-	@Override
+	
 	public LoginSessionModel selectUserId(String userId, String userPw) {
 		return (LoginSessionModel) getSqlMapClientTemplate().queryForObject("login.loginCheck2",                
 				                          new LoginSessionModel(userId, userPw, null, false));

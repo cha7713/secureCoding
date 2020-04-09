@@ -7,12 +7,12 @@ import org.springframework.validation.Validator;
 
 public class MemberValidatior implements Validator {
 
-	@Override
+	
 	public boolean supports(Class<?> clazz) {
 		return MemberModel.class.isAssignableFrom(clazz);
 	}
 
-	@Override
+	
 	public void validate(Object target, Errors errors) {
 		MemberModel memberModel = (MemberModel) target;
 		
